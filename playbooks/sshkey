@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+echo "generate SSH keys"
+ssh-keygen -q -t rsa -N '' -f ~/.ssh/id_rsa <<<y >/dev/null 2>&1 || echo "FAILED"
+
+# the commande <sshpass -e> takes the password from the environment variable "SSHPASS". 
+export SSHPASS=ansible
+
+# read the hosts file line by line, [[ -n ${line} ]] is for reading the last line
+cat /etc/ansible/hosts | while read line || [[ -n ${line} ]]
+do
+	echo " send public ssh key to $line"
+	sshpass -e ssh-copy-id -i ~/.ssh/id_rsa.pub -o StrictHostKeyChecking=no $line >/dev/null 2>&1 || echo "FAILED"
+done
+
+
+
