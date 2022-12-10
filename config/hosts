@@ -1,7 +1,7 @@
-ansible_web_1
-ansible_web_2
-ansible_web_3
-ansible_web_4
-ansible_web_5
-ansible_lb_1
-ansible_db_1
+ansible_docker_lab_web_1
+ansible_docker_lab_web_2
+ansible_docker_lab_web_3
+ansible_docker_lab_web_4
+ansible_docker_lab_web_5
+ansible_docker_lab_lb_1
+ansible_docker_lab_db_1

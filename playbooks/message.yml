@@ -1,0 +1,8 @@
+---
+- hosts: all
+  tasks:
+    - name: fichiers hosts
+      lineinfile:
+        path: /root/text
+        line: Hello World
+        state: present

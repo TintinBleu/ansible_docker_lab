@@ -1,0 +1,7 @@
+- name: envoie le fichier sur group de serveurs
+  hosts: all
+  tasks:
+    - name: copy
+      copy:
+        src: ./text
+        dest: /root/text

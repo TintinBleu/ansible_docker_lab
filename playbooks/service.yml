@@ -1,0 +1,7 @@
+---
+- hosts: ansible_docker_lab_db_1
+  tasks:
+    - name: Restart service httpd, in all cases
+      service:
+        name: apache2
+        state: restarted

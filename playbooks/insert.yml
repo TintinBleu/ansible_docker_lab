@@ -1,0 +1,9 @@
+---
+- hosts: ansible_docker_lab_db_1
+  tasks:
+    - name: insert after
+      lineinfile:
+        path: /root/text
+        insertafter: 'Hello Ming'
+        line: Hello Ansible
+        state: present
